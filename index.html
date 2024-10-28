@@ -48,14 +48,16 @@
           "</tr>"
         )
       })
-      
+
       $(".tombol-hapus").click(async function() {
-        await hapusBuah($(this). attr('data'))
-        location.reload()
+        if (confirm("Apakah benar mau menghapus?")) {
+          await hapusBuah($(this).attr('data'))
+          location.reload()
+        }
       })
-        
-      
-      
+
+
+
     })
   </script>
 </body>
