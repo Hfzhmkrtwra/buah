@@ -57,6 +57,10 @@ export async function ambilDaftarBuah() {
       harga: dokumen.data().harga
     })
   })
-  
+
   return hasilKueri;
+}
+
+export async function hapusBuah(id) {
+  await deleteDoc(doc(basisdata, "buah", id))
 }
