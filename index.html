@@ -14,8 +14,8 @@
 <body>
   <h1>Daftar Buah</h1>
 
-  <table class="table table-striped table-bordered border-primary " id="daftar-buah">
-    <thead>
+  <table class="table table-striped-columns table-bordered  " id="daftar-buah">
+    <thead class="table-success">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Nama Buah</th>
@@ -31,7 +31,7 @@
   <a href="formtambah.html">Tambah Buah</a>
 
   <script type="module">
-    import { ambilDaftarBuah, hapusBuah } from './main.js';
+    import { hapusBuah, ambilDaftarBuah} from './main.js';
 
     $(document).ready(async function() {
       let elemenDaftarBuah = $("#daftar-buah > tbody");
@@ -59,7 +59,10 @@
         }
       })
 
-
+    $(".link-ubah").click(async function() {
+      location.replace('formubah.html?id=' + $(this).attr('data')) 
+      
+    })
 
     })
   </script>
